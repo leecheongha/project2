@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Intro</title>
+    <link rel="stylesheet" href=".css">
+    <style>
+
+        #terms{
+            border: 1px solid black;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!-- 애를 감추고 회원가입동의 약관 먼저 나오게 하기 -->
+    <form action="" name="login">
+        이름 : <input type="text" name ='username'><br>
+        주소 : <input type="text" name = 'address'><br>
+        성별 : 
+        <input type="radio" name="gender" value = 'male' id="">남성
+        <input type="radil" name="gender" value="female" id="">여성       
+
+    </form>
+
+
+<section id="terms">
+<h3>회원가입 동의 약관</h3>
+
+</h3>
+<form name="formTerms">
+<div>
+
+    <p>약관내용 1 <br> 어쩌구 저쩌구</p>
+
+    <input type="checkbox" name="terms">약관에 동의하셔야 합니다.(필수)
+</div>
+
+<div>
+
+    <p>약관내용 2 <br> 어쩌구 저쩌구</p>
+    <input type="checkbox" name="terms" id="">약관에 동의하셔야 합니다.(필수)
+</div>
+<div>
+
+    <p>약관내용 3 <br> 어쩌구 저쩌구</p>
+    <input type="checkbox" name="terms">약관에 동의하셔야 합니다.(필수)
+</div><br>
+
+<button type="button" onclick="checkTerms()"  
+>
+<!-- 버튼 클릭하면 회원가입 내용이 디스플레이되게 하기 -->
+제출 </button>
+
+
+</form >
+</section>
+
+<script>
+
+    function checkTerms(){
+
+    let count=0;
+
+    for(e of document.forms.formTerms.terms){
+
+        if(e.checked){
+        count++ }
+    }
+    if(count <3){
+
+        alert("모두 동의해주세요")
+    }
+}
+</script>
+
+
+
+
+</body>
